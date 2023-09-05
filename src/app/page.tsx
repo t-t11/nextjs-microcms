@@ -1,5 +1,13 @@
 import Link from 'next/link';
 import { client } from './libs/client';
+import {
+  Key,
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+  PromiseLikeOfReactNode,
+} from 'react';
 
 export const revalidate = 60;
 
@@ -8,13 +16,14 @@ export default async function Home() {
     endpoint: 'blog',
   });
   const { contents } = data;
+  console.log(contents);
 
   return (
     <main className="h-screen flex flex-col justify-center items-center">
       <h1 className="text-3xl mb-4">My Blog</h1>
       <div className="bg-slate-400 h-1/2 w-1/2 p-4 text-center">
         <ul>
-          {contents.map((content) => (
+          {contents.map((content: { id: string; title: string }) => (
             <li key={content.id} className="list-inside list-disc mb-2">
               <Link
                 href={`/blog/${content.id}`}
