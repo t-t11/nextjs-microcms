@@ -5,6 +5,11 @@ import parse from 'html-react-parser';
 export const dynamicParams = false;
 export const revalidate = 60;
 
+export const metadata = {
+  title: 'Blog Page',
+  description: 'This is a blog page',
+};
+
 export async function generateStaticParams() {
   const post = await client.get({
     endpoint: 'blog',
