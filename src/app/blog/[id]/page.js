@@ -23,6 +23,7 @@ export default async function Page({ params }) {
     <main className="h-screen flex flex-col justify-center items-center">
       <section className="h-1/2 w-2/3 p-4 bg-slate-400">
         <h1 className="text-xl text-center mb-10">{data.title}</h1>
+        <p className="my-6 text-xs">カテゴリー: {data.category.name}</p>
         {parse(data.body)}
         <div className="mt-16">
           <Link href="/" className="border-b hover:bg-blue-400">

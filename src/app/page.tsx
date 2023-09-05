@@ -16,12 +16,11 @@ export default async function Home() {
     endpoint: 'blog',
   });
   const { contents } = data;
-  console.log(contents);
 
   return (
     <main className="h-screen flex flex-col justify-center items-center">
       <h1 className="text-3xl mb-4">My Blog</h1>
-      <div className="bg-slate-400 h-1/2 w-1/2 p-4 text-center">
+      <div className="bg-slate-400 h-1/2 w-1/2 px-4 py-6 text-center">
         <ul>
           {contents.map((content: { id: string; title: string }) => (
             <li key={content.id} className="list-inside list-disc mb-2">
@@ -35,7 +34,7 @@ export default async function Home() {
           ))}
         </ul>
       </div>
-      <p className="text-xs">
+      <p className="text-xs text-center w-1/2">
         Using Next.js, microCMS, & TailwindCSS. Delpoyed by Vercel. © Tai Sou
         2023
       </p>
