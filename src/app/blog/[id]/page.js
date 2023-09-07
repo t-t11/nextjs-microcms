@@ -25,7 +25,7 @@ export default async function Page({ params }) {
   const data = await client.get({ endpoint: 'blog', contentId: params.id });
 
   return (
-    <main className="h-screen flex flex-col justify-center items-center">
+    <main className="min-h-screen flex flex-col justify-center items-center">
       <section className="h-1/2 w-2/3 p-4 bg-slate-400">
         <h1 className="text-xl text-center mb-10">{data.title}</h1>
         <p className="my-6 text-xs">カテゴリー: {data.category.name}</p>
